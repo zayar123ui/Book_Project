@@ -1,3 +1,5 @@
+const { ObjectId } = require("mongodb");
+
 module.exports = {
   joi_error: (errors) => {
     const errs = {};
@@ -15,6 +17,11 @@ module.exports = {
     return errs;
   },
   id_generate: () => {
-     return Math.floor(100000 + Math.random() * 900000);
+    return Math.floor(100000 + Math.random() * 900000);
+  },
+  object_id_to_string: (id) => {
+   
+    return id.toString();
+  
   },
 };

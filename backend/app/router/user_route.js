@@ -8,9 +8,9 @@ router.post("/register", [
   validateBody(Schema.register_request),
   controller.register,
 ]);
-router.get("/", [
+// router.get("/", [
   
-  controller.getAllUser,
-]);
+//   controller.getAllUser,
+// ]);
 
 module.exports = router;

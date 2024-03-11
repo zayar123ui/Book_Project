@@ -56,6 +56,8 @@ const Home = () => {
       })
       .catch((err) => {
         if (err) {
+          console.log(body);
+          console.log(err);
           notify("error", "Borrow books limit exceeded (max: 5)");
 
           setTimeout(() => {
@@ -73,7 +75,9 @@ const Home = () => {
       })
       .then((ans) => {
         if (ans.data !== "") {
+
           setBooks(ans.data);
+          console.log(books);
         }
       })
       .catch((err) => {
@@ -117,14 +121,13 @@ const Home = () => {
         </button>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10">
-        {books.map(({ id, title, author, description, photo }) => (
+        {books.map(({ _id, title, author }) => (
           <BookCard
-            id={id}
+            id={_id}
             title={title}
             author={author}
-            description={description}
-            photo={photo}
-            key={id}
+
+            key={_id}
             addToBorrowBooks={addToBorrowBooks}
           />
         ))}

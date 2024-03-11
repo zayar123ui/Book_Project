@@ -120,7 +120,7 @@ const AdminLogin = () => {
           <Typography variant="h4" color="blue-gray">
             Login In
           </Typography>
-          <button onClick={() => navigate("/login")}>user login</button>
+          <button onClick={() => navigate("/login")}>User Login</button>
         </div>
         <form
           className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96"

@@ -16,9 +16,10 @@ const BorrowBooks = () => {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((ans) => {
-    
+
         if (ans.data !== "") {
           setBooks(ans.data.Borrowed_Books);
+          
         }
       })
       .catch((err) => {
@@ -32,14 +33,14 @@ const BorrowBooks = () => {
         <button onClick={() => navigate("/")} className="rounded-md px-6 py-2 bg-white">Back to Home Page</button>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10">
-        {books.map(({ id, title, author, description, photo }) => (
+        {books.map(({ _id, title, author, description, photo }) => (
           <BookCard
-            id={id}
+            id={_id}
             title={title}
             author={author}
             description={description}
             photo={photo}
-            key={id}
+            key={_id}
           />
         ))}
       </div>
